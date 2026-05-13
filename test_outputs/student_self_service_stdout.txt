@@ -1,9 +1,9 @@
 Student self-service row-security stdout capture
-created_at=2026-05-13T15:12:48
+created_at=2026-05-13T15:24:04
 operator=STUDENT_0001005
 expected_access=Zara Quinn only
 
-$ /Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Show me Zara Quinn
+$ ~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Show me Zara Quinn
 exit_code=0
 --- stdout ---
 Student success report for Zara Quinn (0001005)
@@ -21,18 +21,18 @@ Incomplete requirements:
 - BSCS-CSCORE: Complete CS core
 - BSCS-MATHREQ: Complete math requirement
 
-$ /Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Show me Theo Lane
+$ ~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Show me Theo Lane
 exit_code=0
 --- stdout ---
 No matching student was found for: Show me Theo Lane
 
-$ /Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Which students owe money?
+$ ~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Which students owe money?
 exit_code=0
 --- stdout ---
 Students with positive balances:
 - No visible students have positive balances.
 
-$ /Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py What classes is Zara Quinn taking?
+$ ~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py What classes is Zara Quinn taking?
 exit_code=0
 --- stdout ---
 Classes:
@@ -41,7 +41,7 @@ Classes:
 - CS 330: Databases and Knowledge Graphs (D, 4 units, grade A-)
 - CS 410: AI Systems Lab (E, 4 units, grade not listed)
 
-$ /Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/conversational_studentdb_agent.py <<'CHAT_INPUT'
+$ ~/Dev/pscs_inspired_mock/.venv/bin/python final_project/conversational_studentdb_agent.py <<'CHAT_INPUT'
 Tell me about student 0001005
 What classes is this student taking?
 Show me Theo Lane

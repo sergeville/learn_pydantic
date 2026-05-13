@@ -13,6 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = ROOT / "course_runs"
 OUTPUT_FILE = OUTPUT_DIR / "student_course_walkthrough.md"
 IMAGE_DIR = OUTPUT_DIR / "images"
+REAL_DOWNLOADS_ROOT = str(Path.home() / "Downloads")
+DISPLAY_DEV_ROOT = "~/Dev"
 
 
 @dataclass
@@ -35,6 +37,10 @@ def shell_quote(parts: list[str]) -> str:
     return " ".join(quoted)
 
 
+def display_paths(text: str) -> str:
+    return text.replace(REAL_DOWNLOADS_ROOT, DISPLAY_DEV_ROOT)
+
+
 def html_terminal_block(
     label: str,
     content: str,
@@ -44,7 +50,7 @@ def html_terminal_block(
     body_bg: str,
     text_color: str,
 ) -> str:
-    safe_content = escape(content.rstrip() or "(empty)")
+    safe_content = escape(display_paths(content.rstrip() or "(empty)"))
     safe_label = escape(label)
     return "\n".join(
         [
@@ -83,7 +89,7 @@ def run_action(action: Action) -> str:
         )
         lines.append("")
 
-    command_text = shell_quote(action.command)
+    command_text = display_paths(shell_quote(action.command))
     command_lines = []
     if action.stdin is None:
         command_lines.append(command_text)
@@ -118,7 +124,7 @@ def run_action(action: Action) -> str:
     lines.append(
         html_terminal_block(
             "Stdout",
-            result.stdout,
+            display_paths(result.stdout),
             accent="#475569",
             header_bg="#f8fafc",
             body_bg="#111827",
@@ -131,7 +137,7 @@ def run_action(action: Action) -> str:
         lines.append(
             html_terminal_block(
                 "Stderr",
-                result.stderr,
+                display_paths(result.stderr),
                 accent="#dc2626",
                 header_bg="#fef2f2",
                 body_bg="#450a0a",
@@ -284,7 +290,7 @@ def main() -> None:
         lines.append(run_action(action))
 
     OUTPUT_FILE.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
-    print(f"Wrote Markdown walkthrough to {OUTPUT_FILE}")
+    print(f"Wrote Markdown walkthrough to {display_paths(str(OUTPUT_FILE))}")
 
 
 if __name__ == "__main__":

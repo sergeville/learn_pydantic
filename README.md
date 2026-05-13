@@ -17,7 +17,7 @@ Open this file first. Then follow the course in this order:
 Quick start from the parent project environment:
 
 ```bash
-cd /Users/sergevilleneuve/Downloads/pscs_inspired_mock/studentdb_assistant_course
+cd ~/Dev/pscs_inspired_mock/studentdb_assistant_course
 source ../.venv/bin/activate
 python tests/validate_course.py
 python scripts/01_connect_sqlite.py

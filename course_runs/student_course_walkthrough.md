@@ -1,6 +1,6 @@
 # StudentDB Assistant Course Walkthrough
 
-Generated: 2026-05-13T15:12:30
+Generated: 2026-05-13T15:23:45
 
 This file records the actions of a new student taking the course.
 Each action includes the command, stdout, stderr when present, and exit code.
@@ -16,7 +16,7 @@ A new student starts by reading the README start-here instructions.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python -c &quot;from pathlib import Path; print(Path(&#x27;README.md&#x27;).read_text()[:2200])&quot;</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python -c &quot;from pathlib import Path; print(Path(&#x27;README.md&#x27;).read_text()[:2200])&quot;</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -42,7 +42,7 @@ Open this file first. Then follow the course in this order:
 Quick start from the parent project environment:
 
 ```bash
-cd /Users/sergevilleneuve/Downloads/pscs_inspired_mock/studentdb_assistant_course
+cd ~/Dev/pscs_inspired_mock/studentdb_assistant_course
 source ../.venv/bin/activate
 python tests/validate_course.py
 python scripts/01_connect_sqlite.py
@@ -101,6 +101,7 @@ Installed commands:
 ```bash
 studentdb-assistant &quot;Show me Zara Quinn&quot;
 studentdb-chat
+studentdb-mcp --list-tools
 studentd</code></pre>
 </div>
 
@@ -110,7 +111,7 @@ Before learning, confirm the database, scripts, row security, and chatbot smoke 
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python tests/validate_course.py</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python tests/validate_course.py</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -126,14 +127,14 @@ Run the first script to inspect the real database objects and sample student row
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python scripts/01_connect_sqlite.py</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python scripts/01_connect_sqlite.py</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
 
 <div style="border-left: 4px solid #475569; background: #f8fafc; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #475569; margin-bottom: 0.5rem;">Stdout</div>
-  <pre style="background: #111827; color: #e5e7eb; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>Database: /Users/sergevilleneuve/Downloads/pscs_inspired_mock/studentdb_assistant_course/data/student_mock.db
+  <pre style="background: #111827; color: #e5e7eb; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>Database: ~/Dev/pscs_inspired_mock/studentdb_assistant_course/data/student_mock.db
 
 Tables and views:
 - table: CS_AA_REQUIREMENT_STATUS
@@ -172,7 +173,7 @@ Convert a real SQLite row into a Pydantic model and print a beginner-friendly an
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python scripts/02_pydantic_models.py</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python scripts/02_pydantic_models.py</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -208,7 +209,7 @@ Run several read-only student database tools.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python scripts/03_query_tools.py</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python scripts/03_query_tools.py</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -262,7 +263,7 @@ Ask a normal-language question without writing SQL.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python scripts/05_studentdb_cli.py &#x27;Which students owe money?&#x27;</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python scripts/05_studentdb_cli.py &#x27;Which students owe money?&#x27;</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -290,7 +291,7 @@ Ask for a student success report by name.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Show me Zara Quinn&#x27;</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Show me Zara Quinn&#x27;</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -319,7 +320,7 @@ Ask for incomplete requirements by EMPLID.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Which requirements are incomplete for 0001012?&#x27;</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Which requirements are incomplete for 0001012?&#x27;</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -343,7 +344,7 @@ ADVISOR_COMP can see Computer Science students such as Zara Quinn.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Show me Zara Quinn&#x27;</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Show me Zara Quinn&#x27;</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -377,7 +378,7 @@ ADVISOR_COMP cannot see Business Analytics student Theo Lane.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Show me Theo Lane&#x27;</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Show me Theo Lane&#x27;</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -398,7 +399,7 @@ STUDENT_0001005 can see Zara Quinn.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Show me Zara Quinn&#x27;</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Show me Zara Quinn&#x27;</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -432,7 +433,7 @@ STUDENT_0001005 cannot see Theo Lane.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Show me Theo Lane&#x27;</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py &#x27;Show me Theo Lane&#x27;</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -453,7 +454,7 @@ Run the terminal chatbot with scripted input and capture the whole conversation.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/conversational_studentdb_agent.py &lt;&lt;&#x27;STDIN&#x27;
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python final_project/conversational_studentdb_agent.py &lt;&lt;&#x27;STDIN&#x27;
 Tell me about student 0001005
 What classes is this student taking?
 Does this student owe money?
@@ -505,14 +506,14 @@ Run the focused transcript generator that writes a plain stdout file.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python tests/capture_student_self_service_stdout.py</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python tests/capture_student_self_service_stdout.py</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
 
 <div style="border-left: 4px solid #475569; background: #f8fafc; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #475569; margin-bottom: 0.5rem;">Stdout</div>
-  <pre style="background: #111827; color: #e5e7eb; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>Wrote transcript to /Users/sergevilleneuve/Downloads/pscs_inspired_mock/studentdb_assistant_course/test_outputs/student_self_service_stdout.txt</code></pre>
+  <pre style="background: #111827; color: #e5e7eb; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>Wrote transcript to ~/Dev/pscs_inspired_mock/studentdb_assistant_course/test_outputs/student_self_service_stdout.txt</code></pre>
 </div>
 
 ## Lesson 9: MCP server tool list
@@ -521,7 +522,7 @@ List the MCP tools exposed for compatible AI clients.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_mcp_server.py --list-tools</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_mcp_server.py --list-tools</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -554,7 +555,7 @@ Run the deterministic MCP smoke test without starting a blocking server process.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_mcp_server.py --smoke-test</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_mcp_server.py --smoke-test</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
@@ -807,7 +808,7 @@ Show that the MCP server still respects STUDENTDB_OPRID row security.
 
 <div style="border-left: 4px solid #16a34a; background: #f0fdf4; padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 6px;">
   <div style="font-weight: 700; color: #16a34a; margin-bottom: 0.5rem;">Executed command</div>
-  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>/Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_mcp_server.py --smoke-test</code></pre>
+  <pre style="background: #052e16; color: #dcfce7; padding: 0.85rem; margin: 0; overflow-x: auto; border-radius: 4px;"><code>~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_mcp_server.py --smoke-test</code></pre>
 </div>
 
 Exit code: <span style="color: #16a34a; font-weight: 700;">0</span>
