@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "studentdb-assistant-course"
+version = "0.1.0"
+description = "A Pydantic AI course and StudentDB Assistant over a mock SQLite student database."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [
+  { name = "Serge Villeneuve" }
+]
+keywords = ["pydantic", "pydantic-ai", "sqlite", "mcp", "education"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Education",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+]
+dependencies = [
+  "pydantic>=2.12",
+  "pydantic-ai-slim[openai]>=1.95.0",
+  "mcp>=1.27.1",
+]
+
+[project.urls]
+Repository = "https://github.com/sergeville/learn_pydantic"
+
+[project.scripts]
+studentdb-assistant = "studentdb_assistant_course.cli:main"
+studentdb-chat = "studentdb_assistant_course.chat:chat_loop"
+studentdb-mcp = "studentdb_assistant_course.mcp_server:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+studentdb_assistant_course = ["data/student_mock.db"]

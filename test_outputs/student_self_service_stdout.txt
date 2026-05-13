@@ -1,0 +1,78 @@
+Student self-service row-security stdout capture
+created_at=2026-05-13T15:12:48
+operator=STUDENT_0001005
+expected_access=Zara Quinn only
+
+$ /Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Show me Zara Quinn
+exit_code=0
+--- stdout ---
+Student success report for Zara Quinn (0001005)
+- FERPA flag: N
+- Program: Computer Science (AC)
+- Plan: B.S. Computer Science
+- GPA: 3.91
+- Balance: -$250
+
+Holds:
+- No holds listed.
+
+Incomplete requirements:
+- BSCS-CAPSTONE: Complete AI Systems Lab or capstone
+- BSCS-CSCORE: Complete CS core
+- BSCS-MATHREQ: Complete math requirement
+
+$ /Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Show me Theo Lane
+exit_code=0
+--- stdout ---
+No matching student was found for: Show me Theo Lane
+
+$ /Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Which students owe money?
+exit_code=0
+--- stdout ---
+Students with positive balances:
+- No visible students have positive balances.
+
+$ /Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py What classes is Zara Quinn taking?
+exit_code=0
+--- stdout ---
+Classes:
+- CS 101: Intro to Programming (D, 3 units, grade A)
+- CS 220: Data Structures (D, 4 units, grade A)
+- CS 330: Databases and Knowledge Graphs (D, 4 units, grade A-)
+- CS 410: AI Systems Lab (E, 4 units, grade not listed)
+
+$ /Users/sergevilleneuve/Downloads/pscs_inspired_mock/.venv/bin/python final_project/conversational_studentdb_agent.py <<'CHAT_INPUT'
+Tell me about student 0001005
+What classes is this student taking?
+Show me Theo Lane
+exit
+CHAT_INPUT
+exit_code=0
+--- stdout ---
+StudentDB Conversational Agent
+Type a question, or type exit to quit.
+Example: Tell me about student 0001005
+Mode: safe
+Set STUDENTDB_AGENT_MODE=tools to try Pydantic AI tool-calling with a tool-capable model.
+
+User: 
+Agent: Advisor summary for Zara Quinn (0001005):
+- Program: Computer Science
+- GPA: 3.91
+- Balance: -$250
+- Holds: 0
+- Incomplete requirements: 3
+Tools used: create_student_success_report_tool
+
+User: 
+Agent: Zara Quinn is enrolled in:
+- CS 101: Intro to Programming
+- CS 220: Data Structures
+- CS 330: Databases and Knowledge Graphs
+- CS 410: AI Systems Lab
+Tools used: get_student_classes_tool
+
+User: 
+Agent: I could not find that answer in the database. Try naming a student or asking about holds, balances, GPA, checklist items, or active students.
+
+User: Agent: Goodbye.

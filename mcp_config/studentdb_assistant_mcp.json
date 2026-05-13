@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "studentdb-assistant": {
+      "command": "studentdb-mcp",
+      "args": [],
+      "env": {
+        "STUDENTDB_OPRID": "REGISTRAR_ALL"
+      }
+    }
+  }
+}
