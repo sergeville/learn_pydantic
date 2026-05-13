@@ -1,6 +1,6 @@
 # StudentDB Assistant Course Walkthrough
 
-Generated: 2026-05-13T15:23:45
+Generated: 2026-05-13T15:30:57
 
 This file records the actions of a new student taking the course.
 Each action includes the command, stdout, stderr when present, and exit code.
@@ -39,70 +39,89 @@ Open this file first. Then follow the course in this order:
 5. Run the final project after you understand the lesson scripts
 6. Read optional `lessons/09_mcp_server.md` after the chatbot works
 
-Quick start from the parent project environment:
-
-```bash
-cd ~/Dev/pscs_inspired_mock/studentdb_assistant_course
-source ../.venv/bin/activate
-python tests/validate_course.py
-python scripts/01_connect_sqlite.py
-```
-
 Do not start with the chatbot first. Start with the SQLite lesson so the AI
 assistant feels like normal Python code, not magic.
 
-## What This Course Contains
+## Quick Start
 
-- `data/student_mock.db`: the SQLite database used by every lesson
-- `migrations/001_add_row_security.sql`: PeopleSoft-inspired mock row security
-- `lessons/`: classroom notes for each module
-- `scripts/`: runnable Python scripts for each lesson
-- `exercises/`: practice tasks
-- `answers/`: answer key and suggested solutions
-- `final_project/`: complete StudentDB Assistant
-- `final_project/studentdb_mcp_server.py`: optional MCP server extension
-- `mcp_config/`: example MCP client configuration
-- `tests/validate_course.py`: quick validation script
+### Prerequisites
 
-## Setup
+- Python 3.11 or higher
+- `uv`, the fast Python package manager
+- Optional: an LLM API key for AI-summary or tool-calling mode
+  - OpenAI-compatible providers can use `OPENAI_API_KEY`
+  - Local Ollama can be used without a paid API key
 
-For course development from this folder:
+The core course, SQLite lessons, deterministic CLI, safe chatbot fallback, and
+MCP smoke tests do not require a paid LLM key. An LLM key is only needed when
+you enable optional Pydantic AI model calls.
+
+### Install `uv`
+
+macOS/Linux:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-## Install As A Package On macOS Or Linux
+Windows PowerShell:
 
-This project can also be installed as a normal Python package. That gives you
-terminal commands instead of requiring `python final_project/...` paths.
+```powershell
+powershell -c &quot;irm https://astral.sh/uv/install.ps1 | iex&quot;
+```
 
-From a fresh machine:
+Restart your terminal after installing `uv` if the `uv` command is not found.
+
+### Install This App
 
 ```bash
 git clone https://github.com/sergeville/learn_pydantic.git
 cd learn_pydantic
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install .
+uv sync
 ```
 
-For editable course development:
+### Validate The Course
 
 ```bash
-python -m pip install -e .
+uv run python tests/validate_course.py
 ```
 
-Installed commands:
+### Run Your First Lesson
 
 ```bash
-studentdb-assistant &quot;Show me Zara Quinn&quot;
-studentdb-chat
-studentdb-mcp --list-tools
-studentd</code></pre>
+uv run python scripts/01_connect_sqlite.py
+```
+
+### Ask The StudentDB Assistant A Question
+
+```bash
+uv run studentdb-assistant &quot;Show me Zara Quinn&quot;
+uv run studentdb-assistant &quot;Which students owe money?&quot;
+```
+
+### Start The Chatbot
+
+```bash
+uv run studentdb-chat
+```
+
+Then ask questions until you type `exit`:
+
+```text
+Tell me about student 0001005
+What classes is this student taking?
+Does this student owe money?
+exit
+```
+
+### Run The MCP Server Smoke Test
+
+```bash
+uv run studentdb-mcp --list-tools
+uv run studentdb-mcp --smoke-test
+```
+
+To start the MCP server for an MCP-</code></pre>
 </div>
 
 ## Validate the course package

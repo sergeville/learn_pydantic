@@ -1,5 +1,5 @@
 Student self-service row-security stdout capture
-created_at=2026-05-13T15:24:04
+created_at=2026-05-13T15:31:15
 operator=STUDENT_0001005
 expected_access=Zara Quinn only
 

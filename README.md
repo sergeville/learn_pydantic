@@ -14,17 +14,118 @@ Open this file first. Then follow the course in this order:
 5. Run the final project after you understand the lesson scripts
 6. Read optional `lessons/09_mcp_server.md` after the chatbot works
 
-Quick start from the parent project environment:
-
-```bash
-cd ~/Dev/pscs_inspired_mock/studentdb_assistant_course
-source ../.venv/bin/activate
-python tests/validate_course.py
-python scripts/01_connect_sqlite.py
-```
-
 Do not start with the chatbot first. Start with the SQLite lesson so the AI
 assistant feels like normal Python code, not magic.
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.11 or higher
+- `uv`, the fast Python package manager
+- Optional: an LLM API key for AI-summary or tool-calling mode
+  - OpenAI-compatible providers can use `OPENAI_API_KEY`
+  - Local Ollama can be used without a paid API key
+
+The core course, SQLite lessons, deterministic CLI, safe chatbot fallback, and
+MCP smoke tests do not require a paid LLM key. An LLM key is only needed when
+you enable optional Pydantic AI model calls.
+
+### Install `uv`
+
+macOS/Linux:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Windows PowerShell:
+
+```powershell
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+Restart your terminal after installing `uv` if the `uv` command is not found.
+
+### Install This App
+
+```bash
+git clone https://github.com/sergeville/learn_pydantic.git
+cd learn_pydantic
+uv sync
+```
+
+### Validate The Course
+
+```bash
+uv run python tests/validate_course.py
+```
+
+### Run Your First Lesson
+
+```bash
+uv run python scripts/01_connect_sqlite.py
+```
+
+### Ask The StudentDB Assistant A Question
+
+```bash
+uv run studentdb-assistant "Show me Zara Quinn"
+uv run studentdb-assistant "Which students owe money?"
+```
+
+### Start The Chatbot
+
+```bash
+uv run studentdb-chat
+```
+
+Then ask questions until you type `exit`:
+
+```text
+Tell me about student 0001005
+What classes is this student taking?
+Does this student owe money?
+exit
+```
+
+### Run The MCP Server Smoke Test
+
+```bash
+uv run studentdb-mcp --list-tools
+uv run studentdb-mcp --smoke-test
+```
+
+To start the MCP server for an MCP-compatible client:
+
+```bash
+uv run studentdb-mcp
+```
+
+### Optional LLM Setup
+
+For local Ollama:
+
+```bash
+ollama serve
+ollama pull llama3.2
+export PYDANTIC_AI_MODEL="ollama:llama3.2"
+export OLLAMA_BASE_URL="http://localhost:11434/v1"
+```
+
+For an OpenAI-compatible provider:
+
+```bash
+export PYDANTIC_AI_MODEL="openai:gpt-4o-mini"
+export OPENAI_API_KEY="your-api-key"
+```
+
+Then try optional AI mode:
+
+```bash
+USE_AI_SUMMARY=1 uv run studentdb-assistant "Show me Theo Lane"
+STUDENTDB_AGENT_MODE=tools uv run studentdb-chat
+```
 
 ## What This Course Contains
 
@@ -39,9 +140,16 @@ assistant feels like normal Python code, not magic.
 - `mcp_config/`: example MCP client configuration
 - `tests/validate_course.py`: quick validation script
 
-## Setup
+## Development Setup
 
-For course development from this folder:
+For course development with `uv`:
+
+```bash
+uv sync
+uv run python tests/validate_course.py
+```
+
+Plain `pip` fallback:
 
 ```bash
 python -m venv .venv
@@ -49,12 +157,12 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Install As A Package On macOS Or Linux
+## Install As A Package With Pip
 
 This project can also be installed as a normal Python package. That gives you
 terminal commands instead of requiring `python final_project/...` paths.
 
-From a fresh machine:
+If you are not using `uv`:
 
 ```bash
 git clone https://github.com/sergeville/learn_pydantic.git
