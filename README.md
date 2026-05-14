@@ -104,6 +104,11 @@ uv run studentdb-mcp
 
 ### Optional LLM Setup
 
+If you use Cursor, your Cursor subscription covers AI features inside the editor,
+but it does not provide an API key for this project's `.env` file. This project
+can still run with local Ollama and no paid API key, or with a direct provider
+key such as `OPENAI_API_KEY` when you enable optional AI mode.
+
 For local Ollama:
 
 ```bash
