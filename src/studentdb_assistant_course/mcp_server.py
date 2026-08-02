@@ -48,7 +48,7 @@ TOOL_NAMES = [
     "find_students_with_holds",
     "find_students_with_positive_balances",
     "find_students_by_gpa",
-    "find_students_with_incomplete_requirements",
+    "find_incomplete_requirements",
     "find_students_with_checklist_items",
     "find_academic_risk_students",
     "create_student_success_report",
@@ -239,7 +239,7 @@ def find_students_by_gpa_tool(max_gpa: float = 2.5) -> dict[str, Any]:
     return {"max_gpa": max_gpa, "students": as_jsonable(find_students_by_gpa(deps(), max_gpa))}
 
 
-@mcp.tool(name="find_students_with_incomplete_requirements")
+@mcp.tool(name="find_incomplete_requirements")
 def find_students_with_incomplete_requirements_tool() -> dict[str, Any]:
     """List visible students with Not Satisfied requirement rows."""
     return {"requirements": as_jsonable(find_students_with_incomplete_requirements(deps()))}

@@ -12,17 +12,22 @@ ROOT = Path(__file__).resolve().parents[1]
 DB_PATH = ROOT / "data" / "student_mock.db"
 
 
-def run(command: list[str], env: dict[str, str] | None = None) -> str:
+def command_env(env: dict[str, str] | None = None) -> dict[str, str]:
     process_env = os.environ.copy()
+    process_env["STUDENTDB_OPRID"] = "REGISTRAR_ALL"
     if env:
         process_env.update(env)
+    return process_env
+
+
+def run(command: list[str], env: dict[str, str] | None = None) -> str:
     result = subprocess.run(
         command,
         cwd=ROOT,
         check=True,
         text=True,
         capture_output=True,
-        env=process_env,
+        env=command_env(env),
     )
     return result.stdout
 
@@ -83,6 +88,7 @@ def assert_scripts() -> None:
             "exit\n"
         ),
         capture_output=True,
+        env=command_env(),
     ).stdout
     assert "Zara Quinn" in chat
     assert "CS 101" in chat

@@ -3,7 +3,7 @@ created_at=2026-05-13T15:31:15
 operator=STUDENT_0001005
 expected_access=Zara Quinn only
 
-$ ~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Show me Zara Quinn
+$ ~/Dev/learn_pydantic/.venv/bin/python final_project/studentdb_assistant.py Show me Zara Quinn
 exit_code=0
 --- stdout ---
 Student success report for Zara Quinn (0001005)
@@ -21,18 +21,18 @@ Incomplete requirements:
 - BSCS-CSCORE: Complete CS core
 - BSCS-MATHREQ: Complete math requirement
 
-$ ~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Show me Theo Lane
+$ ~/Dev/learn_pydantic/.venv/bin/python final_project/studentdb_assistant.py Show me Theo Lane
 exit_code=0
 --- stdout ---
 No matching student was found for: Show me Theo Lane
 
-$ ~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py Which students owe money?
+$ ~/Dev/learn_pydantic/.venv/bin/python final_project/studentdb_assistant.py Which students owe money?
 exit_code=0
 --- stdout ---
 Students with positive balances:
 - No visible students have positive balances.
 
-$ ~/Dev/pscs_inspired_mock/.venv/bin/python final_project/studentdb_assistant.py What classes is Zara Quinn taking?
+$ ~/Dev/learn_pydantic/.venv/bin/python final_project/studentdb_assistant.py What classes is Zara Quinn taking?
 exit_code=0
 --- stdout ---
 Classes:
@@ -41,7 +41,7 @@ Classes:
 - CS 330: Databases and Knowledge Graphs (D, 4 units, grade A-)
 - CS 410: AI Systems Lab (E, 4 units, grade not listed)
 
-$ ~/Dev/pscs_inspired_mock/.venv/bin/python final_project/conversational_studentdb_agent.py <<'CHAT_INPUT'
+$ ~/Dev/learn_pydantic/.venv/bin/python final_project/conversational_studentdb_agent.py <<'CHAT_INPUT'
 Tell me about student 0001005
 What classes is this student taking?
 Show me Theo Lane
